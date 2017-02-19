@@ -1,0 +1,18 @@
+
+    private boolean checkValidation(String strEmail, String strPassword) {
+        if (strEmail.length() == 0) {
+            AlertDialogUtility.SHOW_TOAST(LoginActivity.this, "Please enter email id");
+            et_name.requestFocus();
+            return false;
+        } else if (!GlobalData.checkEmailIsCorrect(strEmail)) {
+            AlertDialogUtility.SHOW_TOAST(LoginActivity.this, "Email id is not valid");
+            et_name.requestFocus();
+            return false;
+        } else if (strPassword.length() == 0) {
+            AlertDialogUtility.SHOW_TOAST(LoginActivity.this, "Please enter password");
+            et_pwd.requestFocus();
+            return false;
+        } else {
+            return true;
+        }
+    }
